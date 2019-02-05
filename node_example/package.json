@@ -1,0 +1,16 @@
+{
+  "name": "ct_api_node",
+  "version": "1.0.0",
+  "description": "an example of the CrowdTangle API in node",
+  "main": "index.js",
+  "repository": "https://github.com/CrowdTangle/API",
+  "author": "georgemayer",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "moment": "^2.24.0",
+    "pug": "^2.0.3"
+  }
+}
