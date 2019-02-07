@@ -4,6 +4,8 @@ var padding = 1.5; // separation between same-color nodes
 var clusterPadding = 6; // separation between different-color nodes
 var maxRadius = 15;
 
+// much of the code from https://bl.ocks.org/ctufts/f38ef0187f98c537d791d24fda4a6ef9
+
 var color = d3.scale.ordinal()
       .range(["#55acee", "#357EBD", "#FF5700"]);
 
@@ -45,17 +47,12 @@ function draw(json) {
   var n = data.length; // total number of nodes
   var m = cs.length; // number of distinct clusters
 
-  console.log("data", cs);
-
   //create clusters and nodes
   var clusters = new Array(m);
   var nodes = [];
   for (var i = 0; i < n; i++){
     nodes.push(create_nodes(data, i));
   }
-
-  console.log(nodes);
-
 
   var force = d3.layout.force()
     .nodes(nodes)
@@ -100,15 +97,6 @@ function draw(json) {
   svg.selectAll("circle.node").on("click", function(){
            console.log(d3.select(this));
        });
-
-  // node.append("text")
-  //   .attr("dy", ".3em")
-  //   .style("text-anchor", "middle")
-  //   .style("color", "white")
-  //   .style("font-weight", "bold")
-  //   .text(function(d) {
-  //     return d.text;
-  //   });
 
   node.transition()
     .duration(750)

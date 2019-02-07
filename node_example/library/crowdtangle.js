@@ -34,8 +34,6 @@ class CrowdTangle {
     return execute("/posts", options);
   }
 }
-//https://bl.ocks.org/ctufts/f38ef0187f98c537d791d24fda4a6ef9
-
 
 function execute(endpoint, options = {}, format = "json") {
   const params = Object.assign({token: FACEBOOK_API_KEY}, options);

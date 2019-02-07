@@ -12,18 +12,19 @@ app.get('/', function (req, res) {
   res.render('index', { title: 'CrowdTangle API Examples', message: 'Hello World!' })
 });
 
+// get a crowdtangle leaderboard and show the pictures with cute hoverable
+// 'like' counts
 app.get('/leaderboard', function (req, res) {
   new CrowdTangle().leaderboard({listId:process.env.LEADERBOARD_LIST_ID}).then(data => {
     res.render('leaderboard', {
       title: 'A CrowdTangle CrowdTangle Leaderboard',
       data
     })
-  })
-
+  });
 });
 
+// Rank twitter embeds by CrowdTangle's overperformance score
 app.get('/twitter-example', function (req, res) {
-
   new CrowdTangle().twitterStream({listIds:process.env.TWITTER_LIST_ID}).then(data => {
     console.log(data);
     res.render('twitter', {
@@ -33,9 +34,9 @@ app.get('/twitter-example', function (req, res) {
   })
 });
 
+// Show a little gravity bubble chart of shares of a certain URL
 app.get('/link-checker', function (req, res) {
   res.format({
-
     html() {
       res.render('links', { title: 'A link checker starter', link: req.query.link})
     },
@@ -46,9 +47,6 @@ app.get('/link-checker', function (req, res) {
       })
     }
   });
-
 });
-
-
 
 app.listen(port, () => console.log(`CT App listening on port ${port}!`));
