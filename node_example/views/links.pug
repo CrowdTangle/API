@@ -1,0 +1,15 @@
+extends layout.pug
+
+block header
+  script(src='https://d3js.org/d3.v3.min.js')
+  script
+    include ../js/link-checker.js
+
+block content
+  section(class='input-section')
+    div
+      input(type='text' placeholder='Add Your Link' id='search_box' value=link)
+      button(id='submit') go
+  section(class='graph')
+      
+  

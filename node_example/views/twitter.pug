@@ -1,0 +1,18 @@
+extends layout.pug
+
+block content
+  section(class='tweets')
+    each row in data.result.posts
+      div(class='tweet')
+        div(class='score')
+          span= `${row.score.toFixed(0)}x`
+        blockquote(class='twitter-tweet' data-lang='en')
+          p(lang='en' dir='ltr')
+          a(href=`https://twitter.com/${row.account.platformId}/status/${row.platformId}`)
+        
+  
+  script(src='https://platform.twitter.com/widgets.js' charset='utf-8')  
+
+  
+      
+  

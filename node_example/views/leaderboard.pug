@@ -1,0 +1,14 @@
+extends layout.pug
+
+
+block content
+  h1(class='leaderboard-header') The CrowdTangle Team
+  section(class = 'leaderboard')
+    each row in data.result.accountStatistics
+      a(href=row.account.url target='_blank')
+        div(class='leaderboard-item')
+          img(src=row.account.profileImage) 
+          span= `@${row.account.handle}`
+          div(class='tooltip')  
+            span= `❤️ ${row.summary.favoriteCount ? row.summary.favoriteCount : 0}`
+      
