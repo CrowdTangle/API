@@ -1,3 +1,10 @@
+<!--
+Copyright (c) Facebook, Inc. and its affiliates.
+
+This source code is licensed under the MIT license found in the
+LICENSE file in the root directory of this source tree.
+-->
+
 extends layout.pug
 
 
@@ -7,8 +14,7 @@ block content
     each row in data.result.accountStatistics
       a(href=row.account.url target='_blank')
         div(class='leaderboard-item')
-          img(src=row.account.profileImage) 
+          img(src=row.account.profileImage)
           span= `@${row.account.handle}`
-          div(class='tooltip')  
+          div(class='tooltip')
             span= `❤️ ${row.summary.favoriteCount ? row.summary.favoriteCount : 0}`
-      

@@ -1,3 +1,10 @@
+<!--
+Copyright (c) Facebook, Inc. and its affiliates.
+
+This source code is licensed under the MIT license found in the
+LICENSE file in the root directory of this source tree.
+-->
+
 extends layout.pug
 
 block content
@@ -9,10 +16,6 @@ block content
         blockquote(class='twitter-tweet' data-lang='en')
           p(lang='en' dir='ltr')
           a(href=`https://twitter.com/${row.account.platformId}/status/${row.platformId}`)
-        
-  
-  script(src='https://platform.twitter.com/widgets.js' charset='utf-8')  
 
-  
-      
-  
+
+  script(src='https://platform.twitter.com/widgets.js' charset='utf-8')
