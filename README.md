@@ -1,3 +1,8 @@
+
+### Important Update to the CrowdTangle API
+CrowdTangle will no longer be available after August 14, 2024. [Learn More](https://help.crowdtangle.com/en/articles/9014544).
+
+
 ## CrowdTangle API!
 
 Head over to [our exciting documentation](https://github.com/CrowdTangle/API/wiki) to get started!
